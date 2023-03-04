@@ -16,6 +16,7 @@ export type Config = {
   layer: string;
   topicColors: Record<string, string>;
   zoomLevel?: number;
+  maxNativeZoom?: number;
 };
 
 export function validateCustomUrl(url: string): Error | undefined {
@@ -110,6 +111,15 @@ export function buildSettingsTree(
       input: "string",
       value: config.customTileUrl,
       error,
+    };
+
+    generalSettings.maxNativeZoom = {
+      label: "Custom max zoom",
+      input: "select",
+      value: config.maxNativeZoom,
+      options: [18, 19, 20, 21, 22, 23, 24].map((num) => {
+        return { label: String(num), value: num };
+      }),
     };
   }
 
