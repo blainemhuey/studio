@@ -114,12 +114,13 @@ export function buildSettingsTree(
     };
 
     generalSettings.maxNativeZoom = {
-      label: "Custom max zoom",
+      label: "Max source zoom",
       input: "select",
       value: config.maxNativeZoom,
       options: [18, 19, 20, 21, 22, 23, 24].map((num) => {
         return { label: String(num), value: num };
       }),
+      help: "Highest zoom supported by the custom map source. See https://leafletjs.com/examples/zoom-levels/ for more information.",
     };
   }
 
