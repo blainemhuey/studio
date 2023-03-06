@@ -263,7 +263,7 @@ function MapPanel(props: MapPanelProps): JSX.Element {
     if (path[1] === "maxNativeZoom" && input === "select") {
       setConfig((oldConfig) => {
         const zoom = parseInt(String(value));
-        return { ...oldConfig, maxNativeZoom: isNaN(zoom) ? oldConfig.maxNativeZoom : zoom };
+        return { ...oldConfig, maxNativeZoom: isFinite(zoom) ? zoom : oldConfig.maxNativeZoom };
       });
     }
 
