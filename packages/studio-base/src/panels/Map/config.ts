@@ -114,7 +114,7 @@ export function buildSettingsTree(
     };
 
     generalSettings.maxNativeZoom = {
-      label: "Max source zoom",
+      label: "Max tile level",
       input: "select",
       value: config.maxNativeZoom,
       options: [18, 19, 20, 21, 22, 23, 24].map((num) => {
